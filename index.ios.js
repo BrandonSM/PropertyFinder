@@ -6,6 +6,7 @@
  'use strict';
 const ReactNative = require('react-native');
 const React = require('react');
+const SearchPage = require('./components/SearchPage.js');
 
 import { Component, PropTypes } from 'react';
 import {
@@ -16,30 +17,6 @@ import {
   NavigatorIOS
 } from 'react-native';
 
-export default class PropertyFinder extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: 'derp',
-          component: HelloWorld,
-        }}/>
-      </View>
-    );
-  }
-}
-
-export class HelloWorld extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Hello World!</Text>
-      </View>
-    )
-  }
-}
 
 const styles = StyleSheet.create({
   text: {
@@ -52,5 +29,20 @@ const styles = StyleSheet.create({
     flex: 1
   },
 });
+
+export default class PropertyFinder extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Drink Finder',
+          component: SearchPage,
+        }}/>
+      </View>
+    );
+  }
+}
 
 AppRegistry.registerComponent('PropertyFinder', () => PropertyFinder);

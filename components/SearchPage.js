@@ -88,7 +88,7 @@ class SearchPage extends Component {
  	 super(props);
  	 this.state = {
      	searchString: 'london',
-     	isLoading: false,
+     	isLoading: false, // Keeps track of whether a query is in progress
      	message: ''
  	 };
 	}
@@ -119,7 +119,9 @@ class SearchPage extends Component {
 	}
 
   render() {
+  	// This either adds the activity indicator, or an empty view based upon the current state
   	var spinner = this.state.isLoading ? ( <ActivityIndicator size='large'/> ) : (<View/>);
+
   	console.log('SearchPage.render');
     return (
       <View style={styles.container}>

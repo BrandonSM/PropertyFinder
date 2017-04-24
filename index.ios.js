@@ -4,7 +4,6 @@
  * @flow
  */
  'use strict';
-const ReactNative = require('react-native');
 const React = require('react');
 const SearchPage = require('./components/SearchPage.js');
 
@@ -37,7 +36,7 @@ export default class PropertyFinder extends Component {
         <NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'Drink Finder',
+          title: 'Property Finder',
           component: SearchPage,
         }}/>
       </View>

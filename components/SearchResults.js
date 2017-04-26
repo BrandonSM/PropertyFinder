@@ -1,7 +1,15 @@
 'use strict';
 
-import React, { Component } from 'react'
-import { Image, ListView, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+const React = require('react');
+import { Component } from 'react'
+import {
+  StyleSheet,
+  Image,
+  View,
+  TouchableHighlight,
+  ListView,
+  Text
+} from 'react-native';
 
 // This code iterates through a list of JSON results, and parses them.
 class SearchResults extends Component {
@@ -15,20 +23,16 @@ class SearchResults extends Component {
     };
   }
 
-  renderRow(rowData, sectionID, rowID) {
+  renderRow(rowEx, sectionID, rowID) {
     return (
-      
-        
-          {rowData.title}
-        
-      
-    );
+    	{rowEx}
+  	);
   }
 
   render() {
-    return (
-      
-    );
+  	//return (
+
+  	//);
   }
 
 }

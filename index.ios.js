@@ -6,6 +6,7 @@
  'use strict';
 const React = require('react');
 const SearchPage = require('./components/SearchPage.js');
+const SearchResults = require('./components/SearchResults.js');
 
 import { Component, PropTypes } from 'react';
 import {

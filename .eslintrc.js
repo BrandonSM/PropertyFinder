@@ -29,9 +29,10 @@ module.exports = {
 			spread: false,
 			superInFunctions: true,
 			templateStrings: true,
-			jsx: false
+			jsx: true
 		},
 		"sourceType": "module",
+		"plugins" : ["react"],
 	},
 	rules: {
 		strict: [2, 'global'],
@@ -75,5 +76,5 @@ module.exports = {
 				named: 'never'
 			}
 		]
-	}
+	},
 };

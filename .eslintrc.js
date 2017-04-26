@@ -1,15 +1,5 @@
-/*
-module.exports = {
-    "extends": "eslint:recommended",
-    "plugins": [
-        "standard",
-        "promise"
-    ],
-    "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
-    },
-};*/
+// ESLint Configuration
+// LEARN MORE OF
 
 'use strict';
 

@@ -30,7 +30,8 @@ module.exports = {
 			superInFunctions: true,
 			templateStrings: true,
 			jsx: false
-		}
+		},
+		"sourceType": "module",
 	},
 	rules: {
 		strict: [2, 'global'],

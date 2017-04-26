@@ -1,6 +1,7 @@
 'use strict';
  
-import React, { Component } from 'react'
+const React = require('react');
+import { Component } from 'react';
 import { ActivityIndicator, TouchableHighlight, Image, StyleSheet, Text, TextInput, View }  from 'react-native';
 
 var styles = StyleSheet.create({
@@ -111,6 +112,16 @@ class SearchPage extends Component {
 	onSearchPressed() {
 	  var query = urlForQueryAndPage('place_name', this.state.searchString, 1);
 	  this._executeQuery(query);
+	}
+
+	// This clears the loading state and parses the JSON response if the response code is 1 (which is TRUE)
+	_handleResponse(response) {
+		  this.setState({ isLoading: false , message: '' });
+		  if (response.application_response_code.substr(0, 1) === '1') {
+		    console.log('Properties found: ' + response.listings.length);
+		  } else {
+		    this.setState({ message: 'Location not recognized; please try again.'});
+		  }
 	}
 
   render() {

@@ -1,15 +1,7 @@
 'use strict';
  
 import React, { Component } from 'react'
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  TouchableHighlight,
-  ActivityIndicator,
-  Image
-} from 'react-native';
+import { ActivityIndicator, TouchableHighlight, Image, StyleSheet, Text, TextInput, View }  from 'react-native';
 
 var styles = StyleSheet.create({
   description: {
@@ -63,6 +55,7 @@ var styles = StyleSheet.create({
 	}
 });
 
+// This is a freestanding function that is not dependent on anything
 function urlForQueryAndPage(key, value, pageNumber) {
   var data = {
       country: 'uk',
@@ -78,7 +71,7 @@ function urlForQueryAndPage(key, value, pageNumber) {
     .map(key => key + '=' + encodeURIComponent(data[key]))
     .join('&');
  
-  return 'http://api.nestoria.co.uk/api?' + querystring;
+  return 'https://api.nestoria.co.uk/api?' + querystring;
 };
 
 class SearchPage extends Component {
@@ -100,6 +93,8 @@ class SearchPage extends Component {
 	  console.log(this.state.searchString);
 	}
 
+	// This makes use of the "fetch" function which is part of the Web API and an improvement on the XMLHttpRequest API. 
+	// The return result is a "promise".
 	_executeQuery(query) {
 	  console.log(query);
 	  this.setState({ isLoading: true });
@@ -121,8 +116,6 @@ class SearchPage extends Component {
   render() {
   	// This either adds the activity indicator, or an empty view based upon the current state
   	var spinner = this.state.isLoading ? ( <ActivityIndicator size='large'/> ) : (<View/>);
-
-  	console.log('SearchPage.render');
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
@@ -144,7 +137,8 @@ class SearchPage extends Component {
 		  </TouchableHighlight>
 		</View>
 		<View style={styles.flowRight}>
-			<TouchableHighlight style={styles.button}
+			<TouchableHighlight 
+				style={styles.button}
 			    underlayColor='#99d9f4'>
 			  <Text style={styles.buttonText}>Location</Text>
 			</TouchableHighlight>
@@ -158,3 +152,4 @@ class SearchPage extends Component {
 }
 
 module.exports = SearchPage;
+

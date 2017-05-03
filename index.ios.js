@@ -19,15 +19,16 @@ import {
 
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   text: {
     color: 'black',
     backgroundColor: 'white',
     fontSize: 30,
     margin: 80
   },
-  container: {
-    flex: 1
-  },
+  
 });
 
 export default class PropertyFinder extends Component {

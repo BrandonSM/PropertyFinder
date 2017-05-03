@@ -10,6 +10,18 @@ import {
   Text,
 } from 'react-native';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  text: {
+    color: 'black',
+    backgroundColor: 'white',
+    fontSize: 30,
+    margin: 80
+  },
+  
+});
 
 class SearchResults extends Component {
 
@@ -24,9 +36,9 @@ class SearchResults extends Component {
   renderRow(rowData, sectionID, rowID) {
     return (
       
-        <View>
-          {rowData.title}
-        </View>
+       <View style={styles.container}>
+          <Text style={styles.text}>{rowData.rowID}</Text>
+       </View>
       
     );
   }
